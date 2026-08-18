@@ -15,7 +15,15 @@ type Leaderboard = {
 export default function HomeView() {
   const [leaderboards, setLeaderboards] = useState<Leaderboard[]>([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
+  const filteredLeaderboards = leaderboards.filter((leaderboard) => {
+    const searchText = search.toLowerCase();
+
+    return (
+      leaderboard.title.toLowerCase().includes(searchText)
+    );
+  });
   useEffect(() => {
     async function fetchLeaderboards() {
       try {
@@ -34,15 +42,17 @@ export default function HomeView() {
     fetchLeaderboards();
   }, []);
 
+
   if (loading) {
     return <p>Loading leaderboards...</p>;
   }
 
   return (
     <main>
-      <h1>Spin Down Leaderboards</h1>
+      <h1>WBO Leaderboards</h1>
     
-      {leaderboards.map((leaderboard) => (
+      {filteredLeaderboards.map((leaderboard) => (
+        
         <div key={leaderboard.id}>
           <a
             key={leaderboard.id}
@@ -61,6 +71,12 @@ export default function HomeView() {
           </a>
         </div>
       ))}
+      <input
+        type="text"
+        placeholder="Search leaderboards..."
+        value={search}
+        onChange={(event) => setSearch(event.target.value)}
+      />
     </main>
   );
 }
