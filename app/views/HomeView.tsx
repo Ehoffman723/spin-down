@@ -40,9 +40,19 @@ export default function HomeView() {
 
   return (
     <main>
-      <h1>WBO Down Leaderboards</h1>
+      <h1>Spin Down Leaderboards</h1>
+    
+      {leaderboards.map((leaderboard) => (
+        <div key={leaderboard.id}>
+          <h2>{leaderboard.title}</h2>
+          <p>{leaderboard.description}</p>
 
-      <p>{leaderboards.length} leaderboards loaded.</p>
+          <p>
+            {leaderboard.playerCount} players {" "}
+            {leaderboard.tournamentCount} tournaments
+          </p>
+        </div>
+      ))}
     </main>
   );
 }
