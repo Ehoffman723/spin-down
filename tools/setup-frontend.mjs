@@ -136,7 +136,17 @@ console.log(
 );
 
 function runNpm(args) {
-  execFileSync(npm, args, { cwd: rootDir, stdio: "inherit" });
+  if (process.platform === "win32") {
+    execFileSync("cmd.exe", ["/d", "/s", "/c", "npm", ...args], {
+      cwd: rootDir,
+      stdio: "inherit",
+    });
+  } else {
+    execFileSync("npm", args, {
+      cwd: rootDir,
+      stdio: "inherit",
+    });
+  }
 }
 
 function printUsage() {

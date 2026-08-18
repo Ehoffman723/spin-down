@@ -44,13 +44,21 @@ export default function HomeView() {
     
       {leaderboards.map((leaderboard) => (
         <div key={leaderboard.id}>
-          <h2>{leaderboard.title}</h2>
-          <p>{leaderboard.description}</p>
+          <a
+            key={leaderboard.id}
+            href={`/leaderboards/${leaderboard.slug}`}
+          >
+            <img src={leaderboard.banner} alt="" />
 
-          <p>
-            {leaderboard.playerCount} players {" "}
-            {leaderboard.tournamentCount} tournaments
-          </p>
+            <h2>{leaderboard.title}</h2>
+
+            <p>{leaderboard.description}</p>
+
+            <p>
+              {leaderboard.playerCount} players {" "}
+              {leaderboard.tournamentCount} tournaments
+            </p>
+          </a>
         </div>
       ))}
     </main>

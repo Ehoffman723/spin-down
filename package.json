@@ -1,17 +1,24 @@
 {
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "npm run typecheck && npm run build:only",
     "dev": "vite dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview",
-    "setup:frontend": "node tools/setup-frontend.mjs"
+    "setup:frontend": "node tools/setup-frontend.mjs",
+    "typecheck": "tsc --noEmit",
+    "build:only": "vite build"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
     "@types/node": "latest",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
     "nitro": "latest",
     "prettier": "3.9.5",
+    "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
     "vite": "latest"
   },
@@ -21,5 +28,13 @@
       "version": "^24.16.0",
       "onFail": "download"
     }
+  },
+  "dependencies": {
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-router": "8.2.0"
+  },
+  "spinDown": {
+    "frontend": "react"
   }
 }
