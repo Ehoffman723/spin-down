@@ -7,7 +7,7 @@ type Leaderboard = {
   description: string;
   league: string;
   formats: string[];
-  banner: string;
+  bannerImageUrl: string;
   playerCount: number;
   tournamentCount: number;
 };
