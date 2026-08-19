@@ -105,6 +105,24 @@ export default function LeaderboardView() {
           </span>
         ))}
       </div>
+
+      <h2 className="mt-10 text-2xl font-bold">
+        Tournaments
+      </h2>
+
+      <div className="mt-4"> 
+        {leaderboard.tournaments?.map((tournament) => (
+          <div key={tournament.id}
+           className="mb-4 rounded border p-4" 
+          > 
+            <h3 className="font-bold">{tournament.title}</h3>
+
+            <p>{tournament.city}</p> 
+            <p>Format: {tournament.format}</p> 
+            <p>Players: {tournament.playerCount}</p> 
+          </div> 
+        ))} 
+      </div>
     </main>
   );
 }
