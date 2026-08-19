@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 type Ranking = {
   leaderboardId: number;
@@ -84,6 +84,9 @@ export default function LeaderboardView() {
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
+      <Link to="/" className="text-sky-700">
+        {"<"} Back to Leaderboards
+      </Link>
       <h1 className="text-3xl font-bold">{leaderboard.title}</h1>
 
       <p className="mt-2 text-slate-600">
