@@ -89,6 +89,22 @@ export default function LeaderboardView() {
       <p className="mt-2 text-slate-600">
         {leaderboard.description}
       </p>
+
+      {leaderboard.bannerImageUrl && (
+        <img
+          src={leaderboard.bannerImageUrl}
+          alt={leaderboard.title}
+          className="mt-4 h-56 w-full rounded-lg object-cover"
+        />
+      )}
+
+      <div className="mt-4">
+        {leaderboard.formats?.map((format) => (
+          <span key={format} className="mr-2">
+            {format}
+          </span>
+        ))}
+      </div>
     </main>
   );
 }
