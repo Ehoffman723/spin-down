@@ -1,11 +1,3 @@
-# Submission Template
-
-Use this as a starting point for your repo's README in your fork of this challenge.
-
-Delete what you don't need, add what you want.
-
----
-
 # BBX Leaderboards
 
 ## How to Run
