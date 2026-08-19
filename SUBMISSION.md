@@ -37,7 +37,21 @@ I mainly focused on getting the functionality of the frontend working. Getting t
 
 ## Assumptions and Scope
 
-What you intentionally included, skipped, or simplified.
+I focused on the main requirements of the challenge rather than trying to build a complete leaderboard platform.
+
+I included:
+
+- Leaderboard browsing
+- Leaderboard search
+- Individual leaderboard pages
+- Leaderboard banner images and descriptions
+- Supported formats
+- Related tournaments
+- Player rankings and statistics
+- Player avatars and countries
+- Basic responsive support for desktop and mobile
+
+I kept tournaments as information within the leaderboard detail page rather than creating separate tournament pages.
 
 ## Stack
 
