@@ -123,6 +123,65 @@ export default function LeaderboardView() {
           </div> 
         ))} 
       </div>
+
+      <h2 className="mt-10 text-2xl font-bold">
+        Player Rankings
+      </h2>
+
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr>
+              <th className="p-2 text-left">Rank</th>
+              <th className="p-2 text-left">Player</th>
+              <th className="p-2 text-left">Country</th>
+              <th className="p-2 text-left">Elo</th>
+              <th className="p-2 text-left">Wins</th>
+              <th className="p-2 text-left">Losses</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {leaderboard.rankings?.map((player) => (
+              <tr key={player.playerId} className="border-t">
+                <td className="p-2">
+                  #{player.rank}
+                </td>
+
+                <td className="p-2">
+                  <div className="flex items-center gap-2">
+                    {player.avatarUrl && (
+                      <img
+                        src={player.avatarUrl}
+                        alt=""
+                        className="h-8 w-8 rounded-full"
+                      />
+                    )}
+
+                    {player.playerName}
+                  </div>
+                </td>
+
+                <td className="p-2">
+                  {player.country}
+                </td>
+
+                <td className="p-2">
+                  {player.currentElo}
+                </td>
+
+                <td className="p-2">
+                  {player.wins}
+                </td>
+
+                <td className="p-2">
+                  {player.losses}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </main>
   );
 }
