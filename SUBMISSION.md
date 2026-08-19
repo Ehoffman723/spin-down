@@ -6,15 +6,42 @@ Delete what you don't need, add what you want.
 
 ---
 
-# [Your Project Name]
+# BBX Leaderboards
 
 ## How to Run
 
-Step-by-step instructions to get the project running locally.
+Make sure you have Node.js 24.16 or newer installed.
+
+Clone the repository and navigate into the project folder.
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually:
+
+http://localhost:3000/
+
+To create a production build:
+
+```bash
+npm run build
+npm run preview
+```
 
 ## Time Spent
 
-Roughly how much time you spent and how you approached the time box.
+I spent roughly 4-4.5 hours working on this project
+
+I mainly focused on getting the functionality of the frontend working. Getting the info from the JSON to appear properly on screen was the goal. After that since I had time I was able to improve upon the UI of the frontend.
 
 ## Assumptions and Scope
 
@@ -22,22 +49,25 @@ What you intentionally included, skipped, or simplified.
 
 ## Stack
 
-- **Frontend:**
-- **Backend:**
-- **Database:**
+- **Frontend: React, TypeScript, Tailwind CSS, React Router**
+- **Backend: Nitro API provided by the challenge starter**
+- **Database: No database. The application uses the provided challenge data through the API.**
 
 ## What I Built
 
-A brief description of your project and your approach.
+I have created a frontend for the purpose of browsing the World Beyblade Organizations leaderboards.
 
-## Notable Decisions
+The home page loads the available leaderboards based on the provided API. The users are able to search through them and select the one that they would like to view.
 
-What choices did you make and why? What tradeoffs did you consider?
-
-## Testing
-
-What you tested and how.
+The leaderboard is then opened using is related slug to reveal the imporant information like tournaments, format, and player count. 
+Scrolling down will bring the user to the player rankings which contains player name, country, elo, and win/loss.
 
 ## What I'd Do With More Time
 
-What would you add, improve, or change?
+I would love to improve on the UI by increase the interaction with the leaderboard selection. I didnt find the mobile version does also have a problem with info getting smushed so improving on the layout for mobile.
+
+Other improvements could be:
+- Adding player detail page
+- Different types of sorting for rankings
+- Having filtering options for different format types
+
