@@ -29,7 +29,6 @@ export default function HomeView() {
       try {
         const response = await fetch("/api/leaderboards");
         const data = await response.json();
-        //Takes response from server and converts JSON to JavaScript objects
 
         setLeaderboards(data);
       } catch (error) {
